@@ -197,6 +197,21 @@
       </div>
    </div>
 
+<!-- 导航栏点击滚动到部分的js代码 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var tabs = document.querySelectorAll('.h_tab');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var targetId = this.getAttribute('data-target');
+                var targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    });
+</script>
    </section>
 </body>
 </html>
